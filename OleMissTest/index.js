@@ -8,7 +8,8 @@ const SKILL_NAME = 'Ole Miss Skill';
 const WELCOME_MESSAGE = 'Hello, Hotty Toddy. ' + 'Ask me Ole Miss questions?' +
   ' For a list of questions, you can ask me say help.';
 
-//update to https when available
+// update to https when available
+// Ole Miss has not updated the link to https yet still waiting :(
 const STREAM_INFO = {
   title: 'Rebel Radio',
   cardContent: "Rebel Radio 92.1 FM",
@@ -18,6 +19,7 @@ const STREAM_INFO = {
 const amazonHandlers = require('./handlers/amazonHandlers');
 const dateHandlers = require('./handlers/dateHandlers');
 const sportsHandlers = require('./handlers/sportsHandlers');
+const factsHanders = require('./handlers/factsHandlers');
 
 const extraHandlers = {
   'LaunchRequest': function() {
@@ -36,6 +38,6 @@ const extraHandlers = {
 exports.handler = function(event, context, callback) {
   const alexa = Alexa.handler(event, context, callback);
   alexa.APP_ID = APP_ID;
-  alexa.registerHandlers(extraHandlers, amazonHandlers, dateHandlers, sportsHandlers);
+  alexa.registerHandlers(extraHandlers, amazonHandlers, dateHandlers, sportsHandlers, factsHanders);
   alexa.execute();
 };

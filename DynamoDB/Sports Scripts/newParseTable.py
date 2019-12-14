@@ -42,7 +42,7 @@ for item in rssFeed.entries:
         summaryReturn = time
 
 
-    event = re.split(" at | vs ",summary[0][26:])
+    event = re.split(" at | vs ",summary[0])
 
     print(idStr + " " +date+" "+event[1]+" "+ locationWhere + " " + event[0] + " "+summaryReturn)
 
